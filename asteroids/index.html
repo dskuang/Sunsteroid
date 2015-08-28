@@ -50,6 +50,7 @@
       <button class="button btn btn-primary start-button" style="margin-bottom: 16px;">Start</button>
       <button class="button btn btn-primary instructions-button ">Instructions</button>
     </div>
+    <button class="restart-button button btn btn-primary">Restart</button>
     <div class="background-img"></div>
     <canvas id="game-canvas" width="500" height="500"></canvas>
     <script src="http://code.createjs.com/easeljs-0.5.0.min.js"></script>
@@ -72,7 +73,7 @@
 
     <script src="lib/planet7.js"></script>
 
-  
+
     <script src="lib/alien1.js"></script>
     <script src="lib/alien2.js"></script>
     <script src="lib/bullet.js"></script>
@@ -86,9 +87,16 @@
       Asteroids.Game.DIM_X = canvasEl.width;
       Asteroids.Game.DIM_Y = canvasEl.height;
 
-      var context = canvasEl.getContext("2d", {});
-      var game = new Asteroids.Game(context);
-      new Asteroids.GameView(game, context);
+      this.context = canvasEl.getContext("2d", {});
+
+      this.game = new Asteroids.Game(this.context);
+      this.gameview = new Asteroids.GameView(game, this.context);
+
+
+      $('.restart-button').click(function() {
+        
+      }.bind(this));
+
     </script>
     <script>
     $(".instructions-button").click(function() {
@@ -106,6 +114,8 @@
           "distance": "500px"
         }, "slow");
     });
+
+
     </script>
   </body>
 </html>
