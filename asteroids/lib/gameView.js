@@ -16,6 +16,7 @@
     this.roundTimer = 200;
     this.pauseValue = false;
     this.explosionTimer = 0;
+
     // document.addEventListener("mouseover", this.getMousePos.bind(this));
   };
 
@@ -27,6 +28,10 @@
         this.pauseValue = true;
       }
       this.pause();
+
+    }.bind(this));
+    key('r', function(){
+      this.restartGame();
 
     }.bind(this));
 
@@ -54,6 +59,15 @@
       setTimeout(this.ctx.rotate(-1*Math.PI/180), 700);
       this.game.ship.hit = false;
     }
+  };
+
+  GameView.prototype.displayHighScore = function() {
+
+    this.ctx.fillStyle = "white";
+    this.ctx.font = 30+"pt Arial ";
+    this.ctx.fillText("High Score " + this.game.highscore, canvasEl.width/2 - 115, canvasEl.height - 20);
+
+
   };
 
   GameView.prototype.displayScore = function() {
@@ -96,15 +110,36 @@
     }
   };
 
+  GameView.prototype.restartGame = function() {
+    clearInterval(this.handle);
+
+    this.roundTimer = 200;
+    this.pauseValue = false;
+    this.explosionTimer = 0;
+    this.game.asteroidSpeed = 2000;
+    this.game.score = 0;
+    this.game.asteroids = [];
+    this.game.addAsteroids();
+    this.game.amount = 0;
+    this.game.total = 5;
+    this.game.backgroundImgs = [];
+    this.game.addBackgroundImages();
+    this.game.ship.health = 100;
+    this.round = 1;
+    this.startGame();
+
+  };
+
   GameView.prototype.setNextRound = function() {
     this.game.addAsteroids();
     clearInterval(this.game.createInterval);
-    this.game.bulletSpeed -= 300;
-    this.game.createAsteroids(this.game.bulletSpeed);
+    this.game.asteroidSpeed -= 300;
+    this.game.createAsteroids(this.game.asteroidSpeed);
     this.round += 1;
     this.roundTimer = 200;
     this.game.amount = 0;
     this.game.total += 10;
+
   };
 
 
@@ -138,27 +173,20 @@
       }
 
       if (this.game.lose()){
-
         this.displayLoseMessage();
         // this.game.draw(this.ctx, this);
       }
       this.showHealth();
       this.displayScore();
+      if(this.roundTimer > 0) {
+        this.displayHighScore();
+      }
 
     }.bind(this), 20);
-    // debugger
-    // if(this.game.lose()) {
-    //   debugger
-      // this.ctx.rotate(-1*Math.PI/180);
-    // }
+
 
 
   };
-
-
-
-
-
 
 
 
@@ -174,15 +202,6 @@
 
 
 
-
-    //
-    //
-    // GameView.prototype.getMousePos = function(e) {
-    //
-    //   this.cursorX = e.clientX;
-    //   this.cursorY = e.clientY;
-    //
-    // };
 
 
 

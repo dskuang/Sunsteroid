@@ -23,7 +23,7 @@
 
 
   Planet2.prototype.draw = function(ctx) {
-  
+
     if(this.planet2Timer > 0) {
       ctx.drawImage(this.quoteimg, this.position[0] - 35, this.position[1] - 40, 80, 80);
       this.planet2Timer -= 1;
@@ -36,7 +36,6 @@
   Planet2.RADIUS = 32;
 
   Planet2.prototype.collideWith = function(otherObject) {
-
     if (otherObject instanceof Asteroids.Bullet) {
       this.planet2Timer = 200;
     }

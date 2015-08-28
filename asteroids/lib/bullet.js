@@ -35,6 +35,7 @@
       this.game.asteroidPos[1] = otherObject.position[1];
       this.game.explosionTimer = 200;
       this.game.score += 1;
+      this.game.highscore += 1;
       this.game.remove(otherObject);
       this.game.remove(this);
 
@@ -43,6 +44,7 @@
       this.game.asteroidPos[1] = otherObject.position[1];
       this.game.explosionTimer = 200;
       this.game.score += 1;
+      this.game.highscore += 1;
       otherObject.health -= 1;
       if (otherObject.health <= 0) {
         this.game.remove(otherObject);

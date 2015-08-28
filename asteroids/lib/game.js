@@ -11,12 +11,11 @@
     this.amount = 0;
     this.total = 5;
     this.score = 0;
-    this.bulletSpeed = 2000;
+    this.asteroidSpeed = 2000;
     this.backgroundImgs = [];
     this.addBackgroundImages();
-    this.createAsteroids(this.bulletSpeed);
-    this.makeLargeAsteroids = false;
-
+    this.createAsteroids(this.asteroidSpeed);
+    this.highscore = 0;
     this.shield = new Asteroids.Shield({pos: [(canvasEl.width ) / 2, (canvasEl.height) / 2], game: this});
     this.ship = new Asteroids.Ship({ pos: [(canvas.width ) / 2, (canvas.height) / 2], game: this});
     this.addAsteroids();
