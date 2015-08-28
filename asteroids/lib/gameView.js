@@ -51,7 +51,7 @@
 
   GameView.prototype.checkShipHit = function() {
     if(this.game.ship.hit === true) {
-      setTimeout(this.ctx.rotate(-1*Math.PI/180), 500);
+      setTimeout(this.ctx.rotate(-1*Math.PI/180), 700);
       this.game.ship.hit = false;
     }
   };
@@ -64,7 +64,9 @@
   };
 
   GameView.prototype.displayLoseMessage = function() {
+
     this.game.ship.health = 0;
+
     this.ctx.fillStyle = "white";
     this.ctx.font = "italic "+30+"pt Arial ";
     this.ctx.fillText("You Lose", 20, 150);
@@ -123,9 +125,7 @@
       this.game.step();
 
       this.game.draw(this.ctx, this);
-      if(this.round === 1) {
-        this.game.makeLargeAsteroids = true;
-      }
+
       this.checkShipHit();
       this.checkShieldTimer();
       this.checkExplosionTimer();
@@ -140,6 +140,7 @@
       if (this.game.lose()){
 
         this.displayLoseMessage();
+        // this.game.draw(this.ctx, this);
       }
       this.showHealth();
       this.displayScore();

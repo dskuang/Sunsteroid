@@ -25,11 +25,14 @@
   Asteroids.Util.inherits(Ship, Asteroids.MovingObject);
 
   Ship.prototype.draw = function(ctx) {
-
+    if(this.health <= 0) {
+      this.img = new Image();
+      this.img.src = 'nuclear.png';
+    }
     var canvas = document.getElementById("game-canvas");
     this.position[0] = (canvas.width ) / 2;
     this.position[1] = (canvas.height) / 2;
-      ctx.drawImage(this.img, this.position[0] - 30, this.position[1] - 30, 70, 70);
+    ctx.drawImage(this.img, this.position[0] - 30, this.position[1] - 30, 70, 70);
 
   };
 
