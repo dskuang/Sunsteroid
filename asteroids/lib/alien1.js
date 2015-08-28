@@ -23,6 +23,7 @@
 
 
   Alien1.prototype.draw = function(ctx) {
+  
     if(this.planet2Timer > 0) {
       ctx.drawImage(this.quoteimg, this.position[0] + 50, this.position[1] - 60, 80, 80);
       this.planet2Timer -= 1;
@@ -32,7 +33,7 @@
 
 
   Alien1.COLOR = "#00FF00";
-  Alien1.RADIUS = 11;
+  Alien1.RADIUS = 30;
 
   Alien1.prototype.collideWith = function(otherObject) {
 

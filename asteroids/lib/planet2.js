@@ -23,17 +23,17 @@
 
 
   Planet2.prototype.draw = function(ctx) {
-
+  
     if(this.planet2Timer > 0) {
       ctx.drawImage(this.quoteimg, this.position[0] - 35, this.position[1] - 40, 80, 80);
       this.planet2Timer -= 1;
     }
-    ctx.drawImage(this.img, this.position[0], this.position[1], 80, 80);
+    ctx.drawImage(this.img, this.position[0], this.position[1], 100, 60);
   };
 
 
   Planet2.COLOR = "#00FF00";
-  Planet2.RADIUS = 20;
+  Planet2.RADIUS = 32;
 
   Planet2.prototype.collideWith = function(otherObject) {
 

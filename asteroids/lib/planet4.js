@@ -23,16 +23,21 @@
 
 
   Planet4.prototype.draw = function(ctx) {
+    // ctx.beginPath();
+    // ctx.arc(this.position[0], this.position[1], 30,  2* Math.PI, false);
+    // context.fillStyle = 'green';
+    // ctx.fill();
+    // ctx.stroke();
     if(this.planet2Timer > 0) {
       ctx.drawImage(this.quoteimg, this.position[0] + 58, this.position[1] - 62, 80, 80);
       this.planet2Timer -= 1;
     }
-    ctx.drawImage(this.img, this.position[0], this.position[1], 80, 80);
+    ctx.drawImage(this.img, this.position[0], this.position[1], 100, 70);
   };
 
 
   Planet4.COLOR = "#00FF00";
-  Planet4.RADIUS = 11;
+  Planet4.RADIUS = 30;
 
   Planet4.prototype.collideWith = function(otherObject) {
 

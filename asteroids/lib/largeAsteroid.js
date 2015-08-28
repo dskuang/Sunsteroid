@@ -37,10 +37,13 @@
     this.ctx = this.game.ctx;
 
     if (otherObject instanceof Asteroids.Ship) {
-      this.ship.health -= 10;
-      this.game.shield.timer = 7;
-      this.game.ctx.rotate(1*Math.PI/180);
-      this.game.ship.hit = true;
+      this.ship.health -= 12;
+      this.game.shield.timer = 8;
+      if(this.ship.health >= 0) {
+        this.game.ctx.rotate(1*Math.PI/180);
+        this.game.ship.hit = true;
+      }
+
       this.game.remove(this);
     }
 

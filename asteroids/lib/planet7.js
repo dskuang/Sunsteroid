@@ -24,6 +24,11 @@
 
 
   Planet7.prototype.draw = function(ctx) {
+    // ctx.beginPath();
+    // ctx.arc(this.position[0], this.position[1], 34,  2* Math.PI, false);
+    // context.fillStyle = 'green';
+    // ctx.fill();
+    // ctx.stroke();
     if(this.planet2Timer > 0) {
       ctx.drawImage(this.quoteimg, this.position[0] - 60, this.position[1] - 50, 80, 80);
       this.planet2Timer -= 1;
@@ -33,7 +38,7 @@
 
 
   Planet7.COLOR = "#00FF00";
-  Planet7.RADIUS = 11;
+  Planet7.RADIUS = 33;
 
   Planet7.prototype.collideWith = function(otherObject) {
 
