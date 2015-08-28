@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+
+    <link rel="stylesheet" type="text/css" href="assets/asteroids.css">
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap.css">
+    <meta charset="utf-8">
+    <style>
+        html, body {
+        max-width: 100%;
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+    </style>
+  </head>
+  <body>
+
+    <div class="instruct-slider">
+      <div class="inner">
+          <div class="sun-div">
+            <div class="sun-desc">
+              You are the sun.
+            </div>
+
+            <img class= "sun-pic" src="sun.png">
+          </div>
+          <br>
+          <div class="ast-div">
+            <div class="ast-desc">
+              Click to shoot asteroids.
+            </div>
+
+            <img class= "asteroid-pic" src="asteroid.png">
+          </div>
+
+
+          <div class="pause-desc">
+            Press space to pause!
+          </div>
+          <div class="win-desc">
+            Rack Up Points!
+          </div>
+
+
+          <a href="#" class="cancel-button">X</a>
+        </div>
+    </div>
+    <div class="start-screen">
+      <button class="button btn btn-primary start-button" style="margin-bottom: 16px;">Start</button>
+      <button class="button btn btn-primary instructions-button ">Instructions</button>
+    </div>
+    <div class="background-img"></div>
+    <canvas id="game-canvas" width="500" height="500"></canvas>
+    <script src="http://code.createjs.com/easeljs-0.5.0.min.js"></script>
+    <script src="assets/jquery-1.11.3.js"></script>
+    <script src="assets/jquery-ui.js"></script>
+
+    <script src="keymaster.js"></script>
+
+    <script src="lib/util.js"></script>
+    <script src="lib/MovingObject.js"></script>
+
+    <script src="lib/ship.js"></script>
+    <script src="lib/largeAsteroid.js"></script>
+    <script src="lib/asteroid.js"></script>
+
+    <script src="lib/planet2.js"></script>
+
+    <script src="lib/planet4.js"></script>
+
+
+    <script src="lib/planet7.js"></script>
+
+  
+    <script src="lib/alien1.js"></script>
+    <script src="lib/alien2.js"></script>
+    <script src="lib/bullet.js"></script>
+    <script src="lib/shield.js"></script>
+    <script src="lib/game.js"></script>
+    <script src="lib/gameView.js"></script>
+    <script>
+      var canvasEl = document.getElementById("game-canvas");
+      canvasEl.height = window.innerHeight;
+      canvasEl.width = window.innerWidth;
+      Asteroids.Game.DIM_X = canvasEl.width;
+      Asteroids.Game.DIM_Y = canvasEl.height;
+
+      var context = canvasEl.getContext("2d", {});
+      var game = new Asteroids.Game(context);
+      new Asteroids.GameView(game, context);
+    </script>
+    <script>
+    $(".instructions-button").click(function() {
+        $('.instruct-slider')
+        $('.instruct-slider').toggle("slide", {
+          "direction": "up",
+          "distance": "500px"
+        }, "slow");
+    });
+
+    $(".cancel-button").click(function() {
+        $('.instruct-slider')
+        $('.instruct-slider').toggle("slide", {
+          "direction": "up",
+          "distance": "500px"
+        }, "slow");
+    });
+    </script>
+  </body>
+</html>
