@@ -22,8 +22,6 @@
     this.addAsteroids();
     this.asteroidPos = [];
 
-
-
   };
 
   Game.prototype.createAsteroids = function(time) {
@@ -41,7 +39,7 @@
   Game.prototype.addAsteroids = function() {
 
     var newPos = this.randomAsteroidPos();
-    // if (this.makeLargeAsteroids === true) {
+
     var rand = this.getRandomInt(0, 1);
     if (rand == 0){
       var asteroid = new Asteroids.largeAsteroid({ pos: newPos, game: this, ship: this.ship });

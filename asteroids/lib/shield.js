@@ -21,7 +21,7 @@
 
   Shield.prototype.draw = function(ctx) {
 
-   ctx.drawImage(this.img, this.game.ship.position[0] - 10, this.game.ship.position[1] - 10, 50, 50);
+   ctx.drawImage(this.img, this.game.ship.position[0] - 46, this.game.ship.position[1] - 46, 100, 100);
 
   };
 

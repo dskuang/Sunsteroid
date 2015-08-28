@@ -59,7 +59,7 @@
   GameView.prototype.displayScore = function() {
     this.ctx.fillStyle = "white";
     this.ctx.font = 20+"pt Arial ";
-    this.ctx.fillText("Score " + this.game.score ,1200, 80);
+    this.ctx.fillText("Score " + this.game.score ,canvasEl.width - 150, 80);
 
   };
 
@@ -70,14 +70,13 @@
     this.ctx.fillText("You Lose", 20, 150);
     clearInterval(this.handle);
 
-
   };
 
 
   GameView.prototype.displayNextRound = function() {
     this.ctx.fillStyle = "white";
     this.ctx.font = "italic "+30+"pt Arial ";
-    this.ctx.fillText("Round " + this.round , 20, 150);
+    this.ctx.fillText("Round " + this.round , canvasEl.width/2 - 64, 100);
     this.roundTimer -= 1;
   };
 
@@ -111,7 +110,7 @@
   GameView.prototype.showHealth = function() {
     this.ctx.fillStyle = "white"
     this.ctx.font = 20+"pt Arial";
-    this.ctx.fillText("Health " + this.game.ship.health, 20 ,80)
+    this.ctx.fillText("Health " + this.game.ship.health, 50 ,80)
   };
 
 
@@ -139,12 +138,19 @@
       }
 
       if (this.game.lose()){
+
         this.displayLoseMessage();
       }
       this.showHealth();
       this.displayScore();
 
     }.bind(this), 20);
+    // debugger
+    // if(this.game.lose()) {
+    //   debugger
+      // this.ctx.rotate(-1*Math.PI/180);
+    // }
+
 
   };
 
