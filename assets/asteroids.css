@@ -133,7 +133,7 @@ html{
 
 .sun-desc {
   float: left;
-  margin-top: 9px;
+  margin-top: 4px;
 }
 
 
@@ -145,7 +145,7 @@ html{
 
 .ast-desc{
   float: left;
-  margin-top: 14px;
+  margin-top: 3px;
 }
 
 .asteroid-pic {
@@ -164,6 +164,10 @@ html{
   display: block;
 }
 
+.pause-desc {
+  margin-top: 18px;
+}
+
 .ast-div {
   height: 50px;
 }
@@ -175,5 +179,5 @@ html{
 
 .win-desc{
   height:30px;
-  margin-top:37px;
+  margin-top:40px;
 }
