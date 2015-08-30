@@ -1,43 +1,29 @@
-# Chess
-Human Vs. Human
+# Sunsteroid
 
+Sunsteroid is a HTML5 Canvas/Javascript game based off of the classic arcade
+game Asteroid. In order to play this game please click on [link].
 
-Ruby is required to run this game
+![start]
 
-- install ruby
-- bundle install
-- clone the repo
-- run game in terminal
-
-$ ruby chess.rb \*recommended
-
-
-The start screen will show the interface to move each piece. Red always goes
-first. Moving around is as easy as pressing on arrow keys!
-
-Start screen
+On the start screen, you can either look at the instructions or start
+the game.
 
 ![instructions]
 
-The game also shows all possible moves available for a currently selected piece.
-
-![highlights]
-
-The game will highlight possible moves for all pieces; however, you are not
-allowed to move when it's not your turn or if the piece cannot move to the
-selected spot.
-
-![valid]
-
-The game will also let you know if you're currently in check.
-
-![check]
+ In this game you are the sun. Since you are stationary, you must
+defend yourself by blowing up the asteroids. Asteroids that hit you
+may take off a certain amount of health based on the asteroids size.
 
 
-Good Luck.
+
+Watch out for planets and aliens that come to block your shots.
+
+![blocked]
 
 
+Break asteroids and rack up that high score! Good Luck.
+
+[link]: http://dskuang.github.io/Sunsteroid/#
 [instructions]: ./pictures/instructions.png
-[highlights]: ./pictures/highlights.png
-[valid]: ./pictures/valid.png
-[check]: ./pictures/check.png
+[blocked]: ./pictures/blocked.png
+[start]: ./pictures/start.gif
