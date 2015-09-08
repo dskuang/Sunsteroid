@@ -1,6 +1,10 @@
 
 html{
   font-family: helvetica;
+<<<<<<< HEAD
+=======
+  cursor: crosshair;
+>>>>>>> 199e4693fbcd77efdf960a0861f3f233cb04321f
 }
 
 .start-button {
